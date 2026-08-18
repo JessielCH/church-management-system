@@ -1,10 +1,12 @@
-# Código de Conducta
+# Code of Conduct
 
-Como participantes y mantenedores de este proyecto, nos comprometemos a promover una comunidad de desarrolladores y usuarios abierta, acogedora, diversa, inclusiva y saludable.
+As contributors and maintainers of this project, we pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
-## Comportamiento Esperado
-- Usar un lenguaje amigable y profesional.
-- Respetar los diferentes puntos de vista y experiencias.
-- Enfocarse en lo que es mejor para la comunidad del proyecto.
+## Expected Behavior
+- Use welcoming and inclusive language.
+- Be respectful of differing viewpoints and experiences.
+- Gracefully accept constructive criticism.
+- Focus on what is best for the community.
+- Show empathy towards other community members.
 
-Cualquier comportamiento inaceptable puede ser reportado al equipo de mantenimiento.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team.

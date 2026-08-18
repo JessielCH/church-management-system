@@ -1,29 +1,32 @@
 # Church Management System
 
-Sistema Administrativo y de Gestión para Iglesias (Plan IEBB), diseñado para ayudar en la administración de membresía, evangelismo, consolidación y discipulado.
+Administrative and Management System for Churches (Plan IEBB), designed to help manage membership, evangelism, consolidation, and discipleship.
 
-## Características (MVP)
-- **Dashboard Institucional**: KPIs de miembros y evangelismo.
-- **Gestión de Membresía**: Base de datos de miembros (activos, inactivos).
-- **Consolidación**: Seguimiento con alertas automáticas.
-- **Agenda**: Eventos y planificación semanal.
+![IEBB Logo](images/logo_iebb.png)
 
-## Arquitectura
-Este proyecto está diseñado bajo un enfoque **Full-Stack Monorepo**:
+## Features (MVP)
+- **Institutional Dashboard**: KPIs for membership and evangelism.
+- **Membership Management**: Member database (active, inactive).
+- **Consolidation**: Follow-ups with automatic alerts.
+- **Agenda**: Events and weekly planning.
+
+## Architecture
+This project is designed with a **Full-Stack Monorepo** approach:
 - **Framework**: Next.js (App Router)
-- **Database**: PostgreSQL (Vercel Postgres o Supabase)
+- **Database**: PostgreSQL (Vercel Postgres or Supabase)
 - **Deployment**: Vercel
 
-## Calidad de Código (CI/CD)
-El repositorio utiliza **GitHub Actions** para asegurar la calidad y el mantenimiento a largo plazo:
-- **Commitlint**: Los commits deben seguir la convención internacional (ej. `feat: add user login`, `fix: header alignment`).
-- **Linting**: (Próximamente) Validación automática de código React/Next.js en cada Pull Request.
+## Code Quality (CI/CD)
+The repository uses **GitHub Actions** and **Local Hooks** to ensure code quality and long-term maintainability:
+- **Pre-commit Hooks**: Local tests and linting run automatically before making a commit.
+- **Commitlint**: Commits must follow the international convention (e.g., `feat: add user login`, `fix: header alignment`).
+- **Linting**: Automatic validation of React/Next.js code on every Pull Request.
 
-## Estructura de Directorios Actual
-- `/mockup/`: Contiene el prototipo inicial en HTML/CSS/JS (Vanilla).
+## Current Directory Structure
+- `/mockup/`: Contains the initial prototype in HTML/CSS/JS (Vanilla).
 
-## Desarrollo Local (Fase Mockup)
-Abre `mockup/index.html` en cualquier navegador web. No requiere instalación.
+## Local Development (Mockup Phase)
+Open `mockup/index.html` in any web browser. No installation required.
 
 ---
-*Prototipo MVP creado según los requerimientos del Plan IEBB.*
+*MVP Prototype created according to Plan IEBB requirements.*

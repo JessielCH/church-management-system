@@ -1,0 +1,12 @@
+{
+  "name": "church-management-system",
+  "version": "1.0.0",
+  "description": "Church Management System MVP",
+  "scripts": {
+    "test": "echo \"Running local tests...\"",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0"
+  }
+}

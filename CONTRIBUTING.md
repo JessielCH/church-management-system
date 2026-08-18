@@ -1,11 +1,11 @@
-# Contribuyendo al Church Management System
+# Contributing to Church Management System
 
-¡Gracias por tu interés en contribuir! Para asegurar la calidad del proyecto:
+Thank you for your interest in contributing to the Church Management System! To ensure the quality of the project, please follow these guidelines:
 
-1. Realiza un Fork del repositorio.
-2. Crea una rama para tu feature (git checkout -b feature/NuevaCaracteristica).
-3. Haz commit de tus cambios (git commit -m 'Añadir nueva característica').
-4. Sube la rama (git push origin feature/NuevaCaracteristica).
-5. Abre un Pull Request.
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/YourAmazingFeature`).
+3. Commit your changes following the Semantic Commits convention (`git commit -m 'feat: add some amazing feature'`).
+4. Push to the branch (`git push origin feature/YourAmazingFeature`).
+5. Open a Pull Request.
 
-Asegúrate de seguir los estilos de código establecidos y respeta la paleta de colores.
+Please make sure to follow the established code styles, pass all local tests (pre-commit hooks), and respect the official color palette of the project.
