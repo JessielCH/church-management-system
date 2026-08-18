@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Administrativo - IEBB</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="material-symbols-outlined logo-icon">church</span>
+                <h2>Plan IEBB</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined">group</span>
+                    <span>Membresía</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined">campaign</span>
+                    <span>Evangelismo</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined">diversity_3</span>
+                    <span>Consolidación</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined">menu_book</span>
+                    <span>Discipulado</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined">event</span>
+                    <span>Agenda</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined">monitoring</span>
+                    <span>Reportes</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span>Configuración</span>
+                </a>
+                <div class="user-profile">
+                    <div class="avatar">P</div>
+                    <div class="user-info">
+                        <strong>Pastor</strong>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Buscar miembros, ministerios, eventos...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-button notification-btn" onclick="toggleNotifications()">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <span class="badge">3</span>
+                    </button>
+                    
+                    <div class="dropdown-container">
+                        <button class="primary-button" onclick="toggleDropdown('newActionDropdown')">
+                            <span class="material-symbols-outlined">add</span>
+                            Nuevo
+                            <span class="material-symbols-outlined" style="font-size: 16px; margin-left: -4px;">expand_more</span>
+                        </button>
+                        <div class="dropdown-menu" id="newActionDropdown">
+                            <a href="#" class="dropdown-item"><span class="material-symbols-outlined">person_add</span> Añadir Miembro</a>
+                            <a href="#" class="dropdown-item"><span class="material-symbols-outlined">event</span> Nuevo Evento</a>
+                            <a href="#" class="dropdown-item"><span class="material-symbols-outlined">how_to_reg</span> Registrar Visita Pastoral</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notification Dropdown -->
+                <div class="notifications-dropdown" id="notificationsDropdown">
+                    <div class="dropdown-header">
+                        <h3>Notificaciones</h3>
+                        <a href="#">Marcar todo leído</a>
+                    </div>
+                    <div class="notification-list">
+                        <div class="notification-item warning">
+                            <span class="material-symbols-outlined icon">warning</span>
+                            <div class="text">
+                                <p><strong>Agenda:</strong> Reunión de liderazgo en 5 horas</p>
+                                <span>Hoy, 14:00</span>
+                            </div>
+                        </div>
+                        <div class="notification-item info">
+                            <span class="material-symbols-outlined icon">event_upcoming</span>
+                            <div class="text">
+                                <p><strong>Evento:</strong> Bautismos en 1 día</p>
+                                <span>Mañana, 09:00</span>
+                            </div>
+                        </div>
+                        <div class="notification-item info">
+                            <span class="material-symbols-outlined icon">calendar_month</span>
+                            <div class="text">
+                                <p><strong>Consolidación:</strong> 3 días para seguimiento de Juan Pérez</p>
+                                <span>20 de Agosto</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Dashboard View -->
+                <div id="view-dashboard" class="view-section active">
+                    <div class="welcome-section">
+                        <div>
+                            <h1>Bienvenido de nuevo</h1>
+                            <p>Aquí está el resumen del ministerio hasta hoy.</p>
+                        </div>
+                        <div class="date-display">
+                            <span class="material-symbols-outlined">calendar_today</span>
+                            <span id="currentDate">17 Agosto 2026</span>
+                        </div>
+                    </div>
+
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon orange">
+                            <span class="material-symbols-outlined">groups</span>
+                        </div>
+                        <div class="kpi-info">
+                            <h3>Membresía Activa</h3>
+                            <div class="kpi-value">482 <span class="trend up">+12%</span></div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon vivid">
+                            <span class="material-symbols-outlined">record_voice_over</span>
+                        </div>
+                        <div class="kpi-info">
+                            <h3>Nuevos Contactos</h3>
+                            <div class="kpi-value">24 <span class="trend up">+5%</span></div>
+                            <p class="kpi-subtitle">Evangelismo este mes</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon pastel">
+                            <span class="material-symbols-outlined">handshake</span>
+                        </div>
+                        <div class="kpi-info">
+                            <h3>En Consolidación</h3>
+                            <div class="kpi-value">15</div>
+                            <p class="kpi-subtitle">Requieren seguimiento</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon red">
+                            <span class="material-symbols-outlined">person_off</span>
+                        </div>
+                        <div class="kpi-info">
+                            <h3>Inactivos</h3>
+                            <div class="kpi-value">8 <span class="trend down">-2%</span></div>
+                            <p class="kpi-subtitle">Atención prioritaria</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Seguimientos Table -->
+                    <div class="card seguimientos-card">
+                        <div class="card-header">
+                            <h2>Próximos Seguimientos</h2>
+                            <a href="#" class="view-all">Ver todos</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Ministerio / Fase</th>
+                                        <th>Fecha Límite</th>
+                                        <th>Estado</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="person-cell">
+                                                <div class="avatar-small">MR</div>
+                                                <div>
+                                                    <strong>María Rodríguez</strong>
+                                                    <span>Nuevo Creyente</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Consolidación</td>
+                                        <td>Hoy, 16:00</td>
+                                        <td><span class="status warning">Pendiente</span></td>
+                                        <td>
+                                            <button class="action-btn"><span class="material-symbols-outlined">call</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="person-cell">
+                                                <div class="avatar-small">CP</div>
+                                                <div>
+                                                    <strong>Carlos Pérez</strong>
+                                                    <span>Inactivo</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Visita Pastoral</td>
+                                        <td>Mañana</td>
+                                        <td><span class="status danger">Urgente</span></td>
+                                        <td>
+                                            <button class="action-btn"><span class="material-symbols-outlined">call</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="person-cell">
+                                                <div class="avatar-small">LG</div>
+                                                <div>
+                                                    <strong>Laura Gómez</strong>
+                                                    <span>Líder en formación</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Discipulado</td>
+                                        <td>20 Ago</td>
+                                        <td><span class="status success">En curso</span></td>
+                                        <td>
+                                            <button class="action-btn"><span class="material-symbols-outlined">edit</span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Agenda Sidebar in Dashboard -->
+                    <div class="card agenda-card">
+                        <div class="card-header">
+                            <h2>Agenda de la Semana</h2>
+                            <button class="icon-button"><span class="material-symbols-outlined">add</span></button>
+                        </div>
+                        <div class="agenda-list">
+                            <div class="agenda-item">
+                                <div class="agenda-time">
+                                    <strong>18</strong>
+                                    <span>Ago</span>
+                                </div>
+                                <div class="agenda-details">
+                                    <h4>Reunión de Liderazgo</h4>
+                                    <p>Planificación mensual</p>
+                                </div>
+                            </div>
+                            <div class="agenda-item urgent">
+                                <div class="agenda-time">
+                                    <strong>19</strong>
+                                    <span>Ago</span>
+                                </div>
+                                <div class="agenda-details">
+                                    <h4>Salida Evangelística</h4>
+                                    <p>Parque central (Confirmar a 10 personas)</p>
+                                </div>
+                            </div>
+                            <div class="agenda-item">
+                                <div class="agenda-time">
+                                    <strong>23</strong>
+                                    <span>Ago</span>
+                                </div>
+                                <div class="agenda-details">
+                                    <h4>Culto Dominical</h4>
+                                    <p>Especial de bautismos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Dashboard View -->
+
+                <!-- Membresía View -->
+                <div id="view-membresia" class="view-section" style="display: none;">
+                    <div class="welcome-section">
+                        <div>
+                            <h1>Membresía</h1>
+                            <p>Gestión del padrón de la iglesia</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Directorio de Miembros</h2>
+                            <div class="search-bar">
+                                <span class="material-symbols-outlined">search</span>
+                                <input type="text" placeholder="Buscar miembro...">
+                            </div>
+                        </div>
+                        <div style="padding: 40px; text-align: center; color: var(--texto-suave);">
+                            <span class="material-symbols-outlined" style="font-size: 48px; color: var(--borde);">group</span>
+                            <p style="margin-top: 16px;">Selecciona "Nuevo" > "Añadir Miembro" para empezar a poblar esta lista.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evangelismo View -->
+                <div id="view-evangelismo" class="view-section" style="display: none;">
+                    <div class="welcome-section">
+                        <div>
+                            <h1>Evangelismo</h1>
+                            <p>Seguimiento de nuevos contactos (Meta 100%)</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Nuevos Contactos (Agosto)</h2>
+                        </div>
+                        <div style="padding: 40px; text-align: center; color: var(--texto-suave);">
+                            <span class="material-symbols-outlined" style="font-size: 48px; color: var(--borde);">campaign</span>
+                            <p style="margin-top: 16px;">Aquí se listarán las personas contactadas en salidas evangelísticas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agenda View -->
+                <div id="view-agenda" class="view-section" style="display: none;">
+                    <div class="welcome-section">
+                        <div>
+                            <h1>Agenda General</h1>
+                            <p>Planificación de eventos e iglesia</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Calendario de este Mes</h2>
+                        </div>
+                        <div style="padding: 40px; text-align: center; color: var(--texto-suave);">
+                            <span class="material-symbols-outlined" style="font-size: 48px; color: var(--borde);">calendar_month</span>
+                            <p style="margin-top: 16px;">El calendario interactivo se mostrará aquí.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End content-area -->
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
