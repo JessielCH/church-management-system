@@ -1,0 +1,47 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "main", "master" ]
+  schedule:
+    - cron: '30 1 * * 0' # Ejecuta un escaneo automático todos los domingos en la madrugada
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript' ]
+        # CodeQL soporta: 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby', 'swift'
+        # 'javascript' cubre tanto JavaScript como TypeScript
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Inicializa CodeQL
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+        # Puedes añadir consultas adicionales aquí (descomentar si quieres análisis más estricto):
+        # queries: security-extended,security-and-quality
+
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v3
+
+    # Realiza el análisis y sube los resultados a la pestaña "Security" de GitHub
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:${{matrix.language}}"
