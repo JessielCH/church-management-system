@@ -1,5 +1,8 @@
 # Church Management System
 
+[![CodeQL Analysis](https://github.com/JessielCH/church-management-system/actions/workflows/codeql.yml/badge.svg)](https://github.com/JessielCH/church-management-system/actions/workflows/codeql.yml)
+[![CI/CD](https://github.com/JessielCH/church-management-system/actions/workflows/lint.yml/badge.svg)](https://github.com/JessielCH/church-management-system/actions/workflows/lint.yml)
+
 Administrative and Management System for Churches (Plan IEBB), designed to help manage membership, evangelism, consolidation, and discipleship.
 
 ![IEBB Logo](images/logo_iebb.png)
